@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Меню"
+        android:icon="@drawable/menu_icon"
+        android:id="@+id/menu_bottom_nav"/>
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Профиль"
+        android:icon="@drawable/profile_icon"
+        android:id="@+id/profile_bottom_nav"/>
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Корзина"
+        android:icon="@drawable/basket_icon"
+        android:id="@+id/basket_bottom_nav"/>
+</menu>
