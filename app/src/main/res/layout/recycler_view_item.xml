@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="151dp">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/photo_food_placeholder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,10 +20,38 @@
         android:id="@+id/food_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
         android:text="Food name"
         android:textFontWeight="@integer/material_motion_duration_long_1"
         app:layout_constraintStart_toEndOf="@+id/photo_food_placeholder"
         app:layout_constraintTop_toTopOf="@+id/photo_food_placeholder" />
+
+    <TextView
+        android:id="@+id/food_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Food descriptiob"
+        app:layout_constraintStart_toStartOf="@+id/food_name"
+        app:layout_constraintTop_toBottomOf="@+id/food_name" />
+
+    <ImageView
+        android:id="@+id/price_red_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/photo_food_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rectangle_frame" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="от 345 р"
+        app:layout_constraintBottom_toBottomOf="@+id/price_red_frame"
+        app:layout_constraintEnd_toEndOf="@+id/price_red_frame"
+        app:layout_constraintStart_toStartOf="@+id/price_red_frame"
+        app:layout_constraintTop_toTopOf="@+id/price_red_frame" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
