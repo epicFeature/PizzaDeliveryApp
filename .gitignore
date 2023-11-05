@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+/replay_pid6512.log
+/hs_err_pid6512.log
+/.idea/
