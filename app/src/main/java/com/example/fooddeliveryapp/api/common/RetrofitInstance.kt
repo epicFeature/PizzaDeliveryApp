@@ -1,21 +1,25 @@
 package com.example.fooddeliveryapp.api.common
 
-import com.example.fooddeliveryapp.api.pizza.PizzaApi
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 object RetrofitInstance {
 
-    private const val BASE_URL = "https://api.jsonserver.io/mousePizzas/api/v1/menu/pizza"
-
-    private val retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(
-            MoshiConverterFactory.create()
-        )
+    private val client = OkHttpClient.Builder()
+        .addInterceptor { chain ->
+            chain.request().newBuilder()
+                .addHeader("X-Jsio-Token", "c29b8555cb367093f5bf401ae4a562d5")
+                .build()
+                .let { chain.proceed(it) }
+        }
         .build()
 
-    val pizzaApi: PizzaApi = retrofit.create(PizzaApi::class.java)
-
+    val instance: Retrofit =
+        Retrofit.Builder()
+            .baseUrl("https://api.jsonserver.io")
+            .addConverterFactory(MoshiConverterFactory.create())
+            .client(client)
+            .build()
 }

@@ -9,5 +9,38 @@
         android:id="@+id/mainFragment"
         android:name="com.example.fooddeliveryapp.ui.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_dessertFragment"
+            app:destination="@id/dessertFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pizzaFragment"
+            app:destination="@id/pizzaFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_drinkFragment"
+            app:destination="@id/drinkFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_comboFragment"
+            app:destination="@id/comboFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pizzaFragment"
+        android:name="com.example.fooddeliveryapp.PizzaFragment"
+        android:label="fragment_pizza"
+        tools:layout="@layout/fragment_pizza" />
+    <fragment
+        android:id="@+id/comboFragment"
+        android:name="com.example.fooddeliveryapp.ui.menu.ComboFragment"
+        android:label="fragment_combo"
+        tools:layout="@layout/fragment_combo" />
+    <fragment
+        android:id="@+id/dessertFragment"
+        android:name="com.example.fooddeliveryapp.DessertFragment"
+        android:label="fragment_dessert"
+        tools:layout="@layout/fragment_dessert" />
+    <fragment
+        android:id="@+id/drinkFragment"
+        android:name="com.example.fooddeliveryapp.DrinkFragment"
+        android:label="fragment_drink"
+        tools:layout="@layout/fragment_drink" />
 </navigation>

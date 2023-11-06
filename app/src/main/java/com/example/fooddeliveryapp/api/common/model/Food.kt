@@ -8,5 +8,5 @@ data class Food(
     val name: String,
     val description: String,
     val price: Int,
-    val photoUrl: String,
-    )
+    val photoUrl: String
+)

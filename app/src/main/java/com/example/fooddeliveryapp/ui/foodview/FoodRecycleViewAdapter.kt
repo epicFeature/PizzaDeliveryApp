@@ -12,11 +12,12 @@ import com.example.fooddeliveryapp.databinding.FoodRecyclerViewBinding
 class FoodRecycleViewAdapter(
 ) : RecyclerView.Adapter<FoodRecycleViewAdapter.FoodViewHolder>() {
 
-    private var data: List<Food> = emptyList()
-        set(newValue) {
-            field = newValue
-            notifyDataSetChanged()
-        }
+    private var _data: List<Food> = emptyList()
+    fun setData(data: List<Food>) {
+        _data = data
+        notifyDataSetChanged()
+    }
+
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,19 +28,19 @@ class FoodRecycleViewAdapter(
         return FoodViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = data.count()
+    override fun getItemCount(): Int = _data.count()
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(
         holder: FoodViewHolder,
         position: Int
     ) {
-        val food = data[position]
+        val food = _data[position]
         val context = holder.itemView.context
 
         with(holder.binding) {
             foodName.text = food.name
-            foodDescription.text = food.name
+            foodDescription.text = food.description
             price.text = "от ${food.price}р."
             Glide.with(context)
                 .load(food.photoUrl)

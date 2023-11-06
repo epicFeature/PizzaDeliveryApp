@@ -9,4 +9,6 @@
     <color name="grey_bar">#F0F0F0</color>
     <color name="grey_background">#FBFBFB</color>
     <color name="white">#FFFFFF</color>
+    <color name="pink_button">#33FD3A69</color>
+    <color name="pink_bright">#FD3A69</color>
 </resources>
