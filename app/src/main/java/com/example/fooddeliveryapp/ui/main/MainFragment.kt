@@ -1,5 +1,6 @@
 package com.example.fooddeliveryapp.ui.main
 
+import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,14 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.core.content.ContextCompat
+import com.example.fooddeliveryapp.R
 import com.example.fooddeliveryapp.databinding.FragmentMainBinding
-import com.example.fooddeliveryapp.ui.foodview.FoodRecycleViewAdapter
+import com.example.fooddeliveryapp.ui.foodview.FoodRecyclerViewAdapter
 import com.example.fooddeliveryapp.ui.main.viewmodel.PizzaViewModel
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainFragment : Fragment() {
-    lateinit var recyclerAdapter: FoodRecycleViewAdapter
-
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
@@ -28,13 +30,12 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
-        initRecyclerView()
-        initViewModel()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initializeTab()
     }
 
     override fun onDestroyView() {
@@ -42,22 +43,19 @@ class MainFragment : Fragment() {
         _binding = null
     }
 
-    private fun initRecyclerView() {
-        binding.menuRecyclerView.layoutManager = LinearLayoutManager(this.requireContext())
-        recyclerAdapter = FoodRecycleViewAdapter()
-        binding.menuRecyclerView.adapter = recyclerAdapter
-    }
+    //временно тут, потом должна во вью модел уйти
+    private fun initializeTab(){
+        binding.viewPager.adapter = PagerAdapter(this)
 
-    private fun initViewModel() {
-        val viewModel: PizzaViewModel = ViewModelProvider(this)[PizzaViewModel::class.java]
-        viewModel.observer.observe(viewLifecycleOwner) {
-            if (it != null) {
-                recyclerAdapter.setData(it)
-            } else{
-                Toast.makeText(this.requireContext(), "Ой, что-то пошло не так. Попробуйте позже.", Toast.LENGTH_SHORT).show()
+        binding.tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab) {
             }
-        }
-        viewModel.makeApiCall()
-    }
 
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+
+        })
+    }
 }

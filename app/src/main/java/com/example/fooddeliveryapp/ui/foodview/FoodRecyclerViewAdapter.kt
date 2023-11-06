@@ -9,8 +9,8 @@ import com.example.fooddeliveryapp.R
 import com.example.fooddeliveryapp.api.common.model.Food
 import com.example.fooddeliveryapp.databinding.FoodRecyclerViewBinding
 
-class FoodRecycleViewAdapter(
-) : RecyclerView.Adapter<FoodRecycleViewAdapter.FoodViewHolder>() {
+class FoodRecyclerViewAdapter(
+) : RecyclerView.Adapter<FoodRecyclerViewAdapter.FoodViewHolder>() {
 
     private var _data: List<Food> = emptyList()
     fun setData(data: List<Food>) {

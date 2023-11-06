@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="RoundedTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">13sp</item>
+        <item name="tabBackground">@drawable/tab_shape</item>
+        <item name="tabIndicator">@null</item>
+        <item name="tabSelectedTextColor">@color/pink_bright</item>
+        <item name="tabTextColor">@color/grey_unselected</item>
+    </style>
+
+</resources>

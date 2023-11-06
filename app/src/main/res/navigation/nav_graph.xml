@@ -25,22 +25,22 @@
     </fragment>
     <fragment
         android:id="@+id/pizzaFragment"
-        android:name="com.example.fooddeliveryapp.PizzaFragment"
+        android:name="com.example.fooddeliveryapp.ui.main.tabmenu.PizzaFragment"
         android:label="fragment_pizza"
         tools:layout="@layout/fragment_pizza" />
     <fragment
         android:id="@+id/comboFragment"
-        android:name="com.example.fooddeliveryapp.ui.menu.ComboFragment"
+        android:name="com.example.fooddeliveryapp.ui.main.tabmenu.ComboFragment"
         android:label="fragment_combo"
         tools:layout="@layout/fragment_combo" />
     <fragment
         android:id="@+id/dessertFragment"
-        android:name="com.example.fooddeliveryapp.DessertFragment"
+        android:name="com.example.fooddeliveryapp.ui.main.tabmenu.DessertFragment"
         android:label="fragment_dessert"
         tools:layout="@layout/fragment_dessert" />
     <fragment
         android:id="@+id/drinkFragment"
-        android:name="com.example.fooddeliveryapp.DrinkFragment"
+        android:name="com.example.fooddeliveryapp.ui.main.tabmenu.DrinkFragment"
         android:label="fragment_drink"
         tools:layout="@layout/fragment_drink" />
 </navigation>
