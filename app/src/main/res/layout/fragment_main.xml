@@ -62,6 +62,7 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
+        android:overScrollMode="ifContentScrolls"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,8 +116,8 @@
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_collapseMode="pin"
-                android:scrollIndicators="none">
+                android:scrollIndicators="none"
+                app:layout_collapseMode="pin">
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tab_layout"
@@ -124,37 +125,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:layout_marginVertical="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:tabBackground="@drawable/tab_selector"
                     app:tabGravity="fill"
                     app:tabIndicator="@null"
                     app:tabMinWidth="105dp"
                     app:tabMode="fixed"
-                    app:tabSelectedTextColor="@color/pink_bright"
                     app:tabTextAppearance="@style/CustomTextAppearanceTab"
                     app:tabTextColor="@color/grey_unselected">
 
                     <com.google.android.material.tabs.TabItem
-                        android:layout_width="wrap_content"
+                        android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="Пицца" />
+                        android:text="1" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="Комбо" />
+                        android:text="2" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="Десерты" />
+                        android:text="3" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="Напитки" />
+                        android:text="4" />
 
                 </com.google.android.material.tabs.TabLayout>
 
@@ -163,30 +160,20 @@
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:overScrollMode="never"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                >
-                <androidx.appcompat.widget.LinearLayoutCompat
+                android:overScrollMode="ifContentScrolls"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/view_pager"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        app:layout_anchorGravity="bottom"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.core.widget.NestedScrollView>
 
         </com.google.android.material.appbar.AppBarLayout>
-
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

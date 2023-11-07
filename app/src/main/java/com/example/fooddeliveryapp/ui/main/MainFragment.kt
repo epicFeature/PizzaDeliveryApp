@@ -20,11 +20,6 @@ class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,19 +38,26 @@ class MainFragment : Fragment() {
         _binding = null
     }
 
-    //временно тут, потом должна во вью модел уйти
-    private fun initializeTab(){
+    private fun initializeTab() {
         binding.viewPager.adapter = PagerAdapter(this)
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, pos ->
+            when (pos) {
+                0 -> {
+                    tab.text = "Пицца"
+                }
 
-        binding.tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
-            override fun onTabSelected(tab: TabLayout.Tab) {
+                1 -> {
+                    tab.text = "Комбо"
+                }
+
+                2 -> {
+                    tab.text = "Десерты"
+                }
+
+                else -> {
+                    tab.text = "Напитки"
+                }
             }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-
-        })
+        }.attach()
     }
 }

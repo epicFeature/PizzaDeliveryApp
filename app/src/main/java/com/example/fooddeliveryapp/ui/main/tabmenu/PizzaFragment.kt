@@ -18,22 +18,14 @@ class PizzaFragment : Fragment() {
     private var _binding: FragmentPizzaBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPizzaBinding.inflate(inflater, container, false)
         initRecyclerView()
         initViewModel()
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun initRecyclerView() {
@@ -47,8 +39,12 @@ class PizzaFragment : Fragment() {
         viewModel.observer.observe(viewLifecycleOwner) {
             if (it != null) {
                 recyclerAdapter.setData(it)
-            } else{
-                Toast.makeText(this.requireContext(), "Ой, что-то пошло не так. Попробуйте позже.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    this.requireContext(),
+                    "Ой, что-то пошло не так. Попробуйте позже.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
         viewModel.makeApiCall()

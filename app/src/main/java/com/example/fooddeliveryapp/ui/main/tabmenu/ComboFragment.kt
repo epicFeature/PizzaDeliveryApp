@@ -20,11 +20,6 @@ class ComboFragment : Fragment() {
     private var _binding: FragmentComboBinding? = null
     private val binding get() = _binding!!
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,10 +28,6 @@ class ComboFragment : Fragment() {
         initRecyclerView()
         initViewModel()
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun initRecyclerView() {
@@ -50,8 +41,12 @@ class ComboFragment : Fragment() {
         viewModel.observer.observe(viewLifecycleOwner) {
             if (it != null) {
                 recyclerAdapter.setData(it)
-            } else{
-                Toast.makeText(this.requireContext(), "Ой, что-то пошло не так. Попробуйте позже.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    this.requireContext(),
+                    "Ой, что-то пошло не так. Попробуйте позже.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
         viewModel.makeApiCall()

@@ -17,25 +17,31 @@
 
     <TextView
         android:id="@+id/food_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:textSize="16dp"
-        android:textColor="@color/recycler_item_name"
         android:text="Food name"
+        android:textColor="@color/recycler_item_name"
+        android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/price_red_frame"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/photo_food_placeholder"
         app:layout_constraintTop_toTopOf="@+id/photo_food_placeholder" />
 
     <TextView
         android:id="@+id/food_description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="@color/recycler_description"
         android:text="Food description"
+        android:textColor="@color/recycler_description"
+        app:layout_constraintBottom_toTopOf="@+id/price_red_frame"
+        app:layout_constraintEnd_toEndOf="@+id/price_red_frame"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/food_name"
-        app:layout_constraintTop_toBottomOf="@+id/food_name" />
+        app:layout_constraintTop_toBottomOf="@+id/food_name"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/price_red_frame"

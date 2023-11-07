@@ -20,26 +20,19 @@ class DessertFragment : Fragment() {
     private var _binding: FragmentDessertBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDessertBinding.inflate(inflater, container, false)
         initRecyclerView()
         initViewModel()
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     private fun initRecyclerView() {
-        binding.dessertFragmentRecyclerView.layoutManager = LinearLayoutManager(this.requireContext())
+        binding.dessertFragmentRecyclerView.layoutManager =
+            LinearLayoutManager(this.requireContext())
         recyclerAdapter = FoodRecyclerViewAdapter()
         binding.dessertFragmentRecyclerView.adapter = recyclerAdapter
     }
@@ -49,8 +42,12 @@ class DessertFragment : Fragment() {
         viewModel.observer.observe(viewLifecycleOwner) {
             if (it != null) {
                 recyclerAdapter.setData(it)
-            } else{
-                Toast.makeText(this.requireContext(), "Ой, что-то пошло не так. Попробуйте позже.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    this.requireContext(),
+                    "Ой, что-то пошло не так. Попробуйте позже.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
         viewModel.makeApiCall()

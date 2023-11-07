@@ -4,5 +4,5 @@ object FoodRepository {
 
     private val factory = GetFoodServiceFactory.instance
 
-    fun getAll(foodType:FoodType) = factory.getFoodData(foodType)
+    fun getAll(foodType: FoodType) = factory.getFoodData(foodType)
 }
