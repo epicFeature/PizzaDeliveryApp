@@ -25,6 +25,7 @@ class ResponseUtil {
                     call: Call<FoodData>,
                     response: Response<FoodData>
                 ) {
+                    Log.d("httpCall", response.body().toString())
                     dataList.postValue(response.body()?.data)
                 }
             })
