@@ -62,7 +62,7 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
-        android:overScrollMode="ifContentScrolls"
+        android:overScrollMode="always"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,30 +81,34 @@
                 android:fitsSystemWindows="false"
                 app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
 
-
                 <HorizontalScrollView
                     android:id="@+id/banners"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scrollIndicators="none"
-                    app:layout_collapseMode="parallax">
+                    android:scrollbars="none">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <ImageView
+                        <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/pizza_banner_1"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/pizza_banner_1" />
+                            android:layout_height="112dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/banner_1"
+                            android:src="@drawable/banner_1"
+                            app:shapeAppearanceOverlay="@style/roundedImageView" />
 
-                        <ImageView
+                        <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/pizza_banner_2"
+                            style="@style/roundedImageView"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/pizza_banner_1" />
+                            android:layout_height="112dp"
+                            android:contentDescription="@string/banner_2"
+                            android:src="@drawable/banner_2"
+                            app:shapeAppearanceOverlay="@style/roundedImageView" />
 
                     </LinearLayout>
 
@@ -116,42 +120,50 @@
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scrollIndicators="none"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                app:elevation="20dp"
+                android:paddingVertical="8dp"
+                android:scrollbars="none"
                 app:layout_collapseMode="pin">
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tab_layout"
-                    style="@style/RoundedTabLayoutStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
-                    android:layout_marginVertical="16dp"
                     app:tabBackground="@drawable/tab_selector"
-                    app:tabGravity="fill"
-                    app:tabIndicator="@null"
+                    app:tabIndicatorGravity="stretch"
+                    android:background="@color/grey_background"
+                    app:tabIndicatorAnimationMode="elastic"
+                    app:tabSelectedTextColor="@color/pink_bright"
+                    app:tabIndicatorColor="@null"
+                    app:tabIndicator="@drawable/tab_indicator"
                     app:tabMinWidth="105dp"
                     app:tabMode="fixed"
+                    app:elevation="20dp"
+                    android:stateListAnimator="@null"
                     app:tabTextAppearance="@style/CustomTextAppearanceTab"
                     app:tabTextColor="@color/grey_unselected">
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="1" />
+                        android:text="Пицца" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="2" />
+                        android:text="Комбо" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="3" />
+                        android:text="Десерты" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="4" />
+                        android:text="Напитки" />
 
                 </com.google.android.material.tabs.TabLayout>
 
@@ -161,6 +173,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:overScrollMode="ifContentScrolls"
+                android:scrollbars="none"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <androidx.viewpager2.widget.ViewPager2
