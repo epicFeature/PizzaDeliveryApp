@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddeliveryapp.databinding.FragmentComboBinding
 import com.example.fooddeliveryapp.ui.foodview.FoodRecyclerViewAdapter
 import com.example.fooddeliveryapp.ui.main.viewmodel.ComboViewModel
-import com.example.fooddeliveryapp.ui.main.viewmodel.PizzaViewModel
 
 
 class ComboFragment : Fragment() {
@@ -56,6 +55,5 @@ class ComboFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 
 }

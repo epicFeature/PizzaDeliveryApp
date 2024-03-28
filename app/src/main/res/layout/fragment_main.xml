@@ -26,7 +26,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar"
-            app:srcCompat="@drawable/qr_code_icon" />
+            app:srcCompat="@drawable/qr_code_icon"
+            android:contentDescription="@string/banner_1" />
 
         <ImageView
             android:id="@+id/see_other_cities_arrow"
@@ -38,14 +39,15 @@
             app:layout_constraintBottom_toBottomOf="@+id/current_city"
             app:layout_constraintStart_toEndOf="@+id/current_city"
             app:layout_constraintTop_toTopOf="@+id/current_city"
-            app:srcCompat="@drawable/arrow_down_icon" />
+            app:srcCompat="@drawable/arrow_down_icon"
+            android:contentDescription="@string/banner_2"/>
 
         <TextView
             android:id="@+id/current_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Москва"
+            android:text="@string/Moscow"
             android:textColor="@color/recycler_item_name"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -122,7 +124,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                app:elevation="20dp"
                 android:paddingVertical="8dp"
                 android:background="@color/grey_background"
                 android:scrollbars="none"
@@ -142,7 +143,6 @@
                     app:tabIndicator="@drawable/tab_indicator"
                     app:tabMinWidth="105dp"
                     app:tabMode="fixed"
-                    android:elevation="10dp"
                     android:stateListAnimator="@null"
                     app:tabTextAppearance="@style/CustomTextAppearanceTab"
                     app:tabTextColor="@color/grey_unselected">
@@ -150,22 +150,22 @@
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="Пицца" />
+                        android:text="@string/Pizza" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="Комбо" />
+                        android:text="@string/Combo" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="Десерты" />
+                        android:text="@string/Dessert" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="88dp"
                         android:layout_height="32dp"
-                        android:text="Напитки" />
+                        android:text="@string/Drinks" />
 
                 </com.google.android.material.tabs.TabLayout>
 

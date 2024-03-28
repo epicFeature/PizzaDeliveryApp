@@ -3,7 +3,6 @@ package com.example.fooddeliveryapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.fooddeliveryapp.databinding.ActivityMainBinding
-import com.example.fooddeliveryapp.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -4,19 +4,19 @@
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Меню"
+        android:title="@string/Menu"
         android:icon="@drawable/menu_icon"
         android:id="@+id/menu_bottom_nav"/>
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Профиль"
+        android:title="@string/Profile"
         android:icon="@drawable/profile_icon"
         android:id="@+id/profile_bottom_nav"/>
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Корзина"
+        android:title="@string/Basket"
         android:icon="@drawable/basket_icon"
         android:id="@+id/basket_bottom_nav"/>
 </menu>

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddeliveryapp.databinding.FragmentDessertBinding
 import com.example.fooddeliveryapp.ui.foodview.FoodRecyclerViewAdapter
 import com.example.fooddeliveryapp.ui.main.viewmodel.DessertViewModel
-import com.example.fooddeliveryapp.ui.main.viewmodel.PizzaViewModel
 
 
 class DessertFragment : Fragment() {
